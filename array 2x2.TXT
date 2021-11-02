@@ -1,0 +1,92 @@
+#include <iostream>
+
+
+int main(void)
+{
+    int i;
+    int j;
+    int r;
+    int c;
+    int a[2][2];
+    int b[2][2];
+    int sum[2][2];
+
+
+    std::cout << "Enter number of rows  : " << std::endl;
+    std::cin >> r;
+
+    std::cout << "Enter number of colums : " << std::endl;
+    std::cin >> c;
+
+    std::cout << std::endl << "Enter 1st table A  : " << std::endl;
+
+    for (i = 0; i < r; ++i)
+        for (j = 0; j < c; ++j)
+        {
+            std::cout << "Enter element of table a " << i + 1 << "x" << j + 1 << " : " << std::endl;
+            std::cin >> a[i][j];
+        }
+
+ 
+    std::cout << std::endl << "Enter 2nd table B  : " << std::endl;
+    for (i = 0; i < r; ++i)
+        for (j = 0; j < c; ++j)
+        {
+            std::cout << "Enter element of table b" << i + 1 << "x" << j + 1 << " : " << std::endl;
+            std::cin >> b[i][j];
+        }
+
+  
+    for (i = 0; i < r; ++i)
+        for (j = 0; j < c; ++j)
+            sum[i][j] = a[i][j] + b[i][j];
+
+  
+    std::cout << std::endl << "Sum + : " << std::endl;
+    for (i = 0; i < r; ++i)
+        for (j = 0; j < c; ++j)
+        {
+            std::cout << sum[i][j] << "  ";
+            if (j == c - 1)
+                std::cout << std::endl;
+        }
+    
+    std::cout << "end of sum + " << std::endl;
+   
+
+    for (i = 0; i < r; ++i)
+        for (j = 0; j < c; ++j)
+            sum[i][j] = a[i][j] - b[i][j];
+
+
+    std::cout << std::endl << "Sum - : " << std::endl;
+    for (i = 0; i < r; ++i)
+        for (j = 0; j < c; ++j)
+        {
+            std::cout << sum[i][j] << "  ";
+            if (j == c - 1)
+                std::cout << std::endl;
+        }
+
+        std::cout << "end of sum -  " << std::endl;
+
+
+    for (i = 0; i < r; ++i)
+        for (j = 0; j < c; ++j)
+            sum[i][j] = a[i][j] * b[i][j];
+
+
+
+    std::cout << std::endl << "Sum * : " << std::endl;
+    for (i = 0; i < r; ++i)
+        for (j = 0; j < c; ++j)
+        {
+            std::cout << sum[i][j] << "  ";
+            if (j == c - 1)
+                std::cout << std::endl;
+        }
+    std::cout << "end of sum * " << std::endl;
+
+
+    return 0;
+}
